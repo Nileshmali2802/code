@@ -1,0 +1,59 @@
+<div class="tab__navigation">
+    <ul class="tabs__nav">
+        <li><a href="#tabs-1" class="active">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2">Proin dolor</a></li>
+        <li><a href="#tabs-3">Aenean lacinia</a></li>
+    </ul>
+    <div id="tabs-1" class="tab__content tab-1" style="display: block;">
+        <p></p>
+    </div>
+    <div id="tabs-2" class="tab__content tab-2">
+        <p></p>
+    </div>
+</div>
+$(document).ready(function() {
+    $(".tabs__nav li a").click(function() {
+        $('.tabs__nav li a').removeClass('active')
+        $(this).addClass('active')
+        $('.tab__content').hide();
+        var ids = $(this).attr('href')
+        $(ids).slideDown();
+    });
+});
+.tab__navigation ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 38px;
+    padding: 10px 15px;
+    padding-bottom: 0;
+    background-color: rgb(233, 233, 233);
+}
+
+.tab__navigation ul li {
+    list-style: none;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #f6f6f6;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+.tab__navigation ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #454545;
+}
+
+.tab__content {
+    display: none;
+}
+
+.tab__content p {
+    border: 1px solid #837f7f;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.tabs__nav li .active {
+    background: rgb(123, 123, 202);
+}
